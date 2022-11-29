@@ -2,18 +2,18 @@ package Program;
 
 import Utilities.Utils;
 
-public class ContaBancaria {
+public class Conta {
 
     private static int contadorDeContas = 1;
 
-    public ContaBancaria(Client cliente) {
+    public Conta(Pessoa cliente) {
         this.numeroConta = contadorDeContas;
         this.cliente = cliente;
         contadorDeContas += 1;
     }
 
     private int numeroConta;
-    private Client cliente;
+    private Pessoa cliente;
     private Double saldo = 0.0;
 
     public int getNumeroConta() {
@@ -24,11 +24,11 @@ public class ContaBancaria {
         this.numeroConta = numeroConta;
     }
 
-    public Client getCliente() {
+    public Pessoa getCliente() {
         return cliente;
     }
 
-    public void setCliente(Client cliente) {
+    public void setCliente(Pessoa cliente) {
         this.cliente = cliente;
     }
 
@@ -62,13 +62,13 @@ public class ContaBancaria {
     public void sacar(Double valor) {
         if(valor > 0 && valor <= getSaldo()) {
             setSaldo(getSaldo() - valor);
-            System.out.println("Seu saque foik realizado com sucesso!");
+            System.out.println("Seu saque foi realizado com sucesso!");
         } else {
             System.out.println("Não foi possível realizar o saque!");
         }
     }
 
-    public void transferir(ContaBancaria contaParaDeposito, Double valor) {
+    public void transferir(Conta contaParaDeposito, Double valor) {
         if(valor > 0 && valor <= this.getSaldo()) {
             setSaldo(getSaldo() - valor );
             contaParaDeposito.saldo = contaParaDeposito.getSaldo() + valor;

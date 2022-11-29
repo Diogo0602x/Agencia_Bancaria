@@ -1,13 +1,13 @@
 package Program;
 
-public class Client {
+public class Pessoa {
     private static int counter = 1;
     private String nome;
     private String CPF;
     private String password;
     private String email;
 
-    public Client(String nome, String CPF, String password, String email) {
+    public Pessoa(String nome, String CPF, String password) {
         this.nome = nome;
         this.CPF = CPF;
         this.password = password;
