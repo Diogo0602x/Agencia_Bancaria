@@ -7,10 +7,13 @@ public class Pessoa {
     private String password;
     private String email;
 
-    public Pessoa(String nome, String CPF, String password) {
+    public Pessoa() {
+
+    }
+
+    public Pessoa(String nome, String CPF, String email) {
         this.nome = nome;
         this.CPF = CPF;
-        this.password = password;
         this.email = email;
         counter += 1;
     }
@@ -29,14 +32,6 @@ public class Pessoa {
 
     public void setCPF(String CPF) {
         this.CPF = CPF;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getEmail() {
